@@ -1,0 +1,6 @@
+@SoloProject.InventoryApi_HostAddress = http://localhost:5226
+
+GET {{SoloProject.InventoryApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
