@@ -28,4 +28,42 @@ public class ProductController : Controller
 
         return View(products);
     }
+    [ActionName("Delete")]
+    public async Task<IActionResult> EditProduct(int id)
+    {
+        var response = await _httpClient.GetAsync($"api/product/{id}");
+        if (!response.IsSuccessStatusCode)
+        {
+            return View("Error");
+        }
+
+        var jsonRespone =await response.Content.ReadAsStringAsync();
+        var product = JsonConvert.DeserializeObject<ProductViewModel>(jsonRespone);
+        return View(product);
+    }
+
+    [HttpPost]
+    [ActionName("Delete")]
+    public async Task<IActionResult> DeleteProduct(int ProductId)
+    {
+        try
+        {
+            // Send HTTP DELETE request to delete the product
+            var response = await _httpClient.DeleteAsync($"api/product/{ProductId}");
+
+            if (!response.IsSuccessStatusCode)
+            {
+                // Handle error response
+                return View("Error");
+            }
+
+            // Redirect to Index action after successful deletion
+            return RedirectToAction("Index");
+        }
+        catch (Exception ex)
+        {
+            // Handle exceptions and return an error view or message
+            return View("Error");
+        }
+    }
 }

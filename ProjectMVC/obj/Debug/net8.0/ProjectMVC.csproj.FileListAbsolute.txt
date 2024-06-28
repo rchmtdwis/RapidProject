@@ -31,3 +31,4 @@ C:\Users\HP\source\repos\SoloProject.InventoryApi\ProjectMVC\obj\Debug\net8.0\re
 C:\Users\HP\source\repos\SoloProject.InventoryApi\ProjectMVC\obj\Debug\net8.0\ProjectMVC.csproj.AssemblyReference.cache
 C:\Users\HP\source\repos\SoloProject.InventoryApi\ProjectMVC\bin\Debug\net8.0\Newtonsoft.Json.dll
 C:\Users\HP\source\repos\SoloProject.InventoryApi\ProjectMVC\obj\Debug\net8.0\ProjectMVC.csproj.Up2Date
+C:\Users\HP\source\repos\SoloProject.InventoryApi\ProjectMVC\obj\Debug\net8.0\ProjectMVC.sourcelink.json

@@ -15,6 +15,9 @@
             <th>Name</th>
             <th>Stock</th>
             <th>Price</th>
+            <th>&nbsp;</th>
+            <th>&nbsp;</th>
+            <th>&nbsp;</th>
         </tr>
     </thead>
     <tbody>
@@ -25,6 +28,8 @@
                 <td>@product.Name</td>
                 <td>@product.Stock</td>
                 <td>@product.Price.ToString("C")</td>
+                <td><a href="/Products/Edit/@product.Id">edit</a></td>
+                <td><a href="/Products/Delete/@product.Id">delete</a></td>
             </tr>
         }
     </tbody>

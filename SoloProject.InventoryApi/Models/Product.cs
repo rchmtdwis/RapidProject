@@ -8,7 +8,6 @@ using Microsoft.EntityFrameworkCore;
 
 namespace SoloProject.InventoryApi.Models;
 
-[Table("Product")]
 public partial class Product
 {
     [Key]
@@ -28,4 +27,7 @@ public partial class Product
 
     [Column(TypeName = "decimal(18, 0)")]
     public decimal Price { get; set; }
+
+    [InverseProperty("Product")]
+    public virtual ICollection<Transaction> Transactions { get; set; } = new List<Transaction>();
 }

@@ -4,7 +4,6 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 
 namespace SoloProject.InventoryApi.Models;
@@ -23,5 +22,7 @@ public partial class Transaction
     [Column(TypeName = "datetime")]
     public DateTime Date { get; set; }
 
-    public Product Product { get; set; }
+    [ForeignKey("ProductId")]
+    [InverseProperty("Transactions")]
+    public virtual Product Product { get; set; }
 }

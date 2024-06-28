@@ -19,9 +19,20 @@ public partial class ProductDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.Entity<Product>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK_Product");
+        });
+
         modelBuilder.Entity<Transaction>(entity =>
         {
+            entity.ToTable(tb => tb.HasTrigger("Tg_UpdateStockLevel"));
+
             entity.Property(e => e.Date).HasDefaultValueSql("(getdate())");
+
+            entity.HasOne(d => d.Product).WithMany(p => p.Transactions)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_Transactions_Product");
         });
 
         OnModelCreatingPartial(modelBuilder);

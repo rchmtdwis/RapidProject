@@ -18,7 +18,6 @@ namespace SoloProject.InventoryApi.Services
             {
                 await _db.Transactions.AddAsync(entity);
                 await _db.SaveChangesAsync();
-                await _db.SaveChangesAsync();
                 return entity;
             }
             catch (Exception ex)
@@ -77,6 +76,28 @@ namespace SoloProject.InventoryApi.Services
         public Task<Transaction> Update(Transaction entity)
         {
             throw new NotImplementedException();
+        }
+
+        public async Task<Transaction> UpdateTransactionType(int id)
+        {
+            try
+            {
+                var transaction = await _db.Transactions.Include(x => x.Product).FirstOrDefaultAsync(x => x.TransactionId == id);
+                if (transaction == null)
+                {
+                    throw new ArgumentException($"Transaction with ID {id} not found.");
+                }
+
+                transaction.TransactionType = !transaction.TransactionType; // Toggle the transaction type
+
+                await _db.SaveChangesAsync();
+
+                return transaction;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
     }
 }

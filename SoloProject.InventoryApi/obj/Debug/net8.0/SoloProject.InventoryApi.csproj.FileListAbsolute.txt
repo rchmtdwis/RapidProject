@@ -135,3 +135,4 @@ C:\Users\HP\source\repos\SoloProject.InventoryApi\SoloProject.InventoryApi\obj\D
 C:\Users\HP\source\repos\SoloProject.InventoryApi\SoloProject.InventoryApi\obj\Debug\net8.0\SoloProject.InventoryApi.pdb
 C:\Users\HP\source\repos\SoloProject.InventoryApi\SoloProject.InventoryApi\obj\Debug\net8.0\SoloProject.InventoryApi.genruntimeconfig.cache
 C:\Users\HP\source\repos\SoloProject.InventoryApi\SoloProject.InventoryApi\obj\Debug\net8.0\ref\SoloProject.InventoryApi.dll
+C:\Users\HP\source\repos\SoloProject.InventoryApi\SoloProject.InventoryApi\obj\Debug\net8.0\SoloProject.InventoryApi.sourcelink.json
