@@ -31,6 +31,7 @@ C:\Users\HP\source\repos\SoloProject.InventoryApi\ProjectMVC\obj\Debug\net8.0\re
 C:\Users\HP\source\repos\SoloProject.InventoryApi\ProjectMVC\obj\Debug\net8.0\ProjectMVC.csproj.AssemblyReference.cache
 C:\Users\HP\source\repos\SoloProject.InventoryApi\ProjectMVC\bin\Debug\net8.0\Newtonsoft.Json.dll
 C:\Users\HP\source\repos\SoloProject.InventoryApi\ProjectMVC\obj\Debug\net8.0\ProjectMVC.csproj.Up2Date
+<<<<<<< HEAD
 C:\Users\HP\Downloads\RapidBootcamp\RapidProject.git\ProjectMVC\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\HP\Downloads\RapidBootcamp\RapidProject.git\ProjectMVC\bin\Debug\net8.0\appsettings.json
 C:\Users\HP\Downloads\RapidBootcamp\RapidProject.git\ProjectMVC\bin\Debug\net8.0\ProjectMVC.staticwebassets.runtime.json
@@ -65,3 +66,6 @@ C:\Users\HP\Downloads\RapidBootcamp\RapidProject.git\ProjectMVC\obj\Debug\net8.0
 C:\Users\HP\Downloads\RapidBootcamp\RapidProject.git\ProjectMVC\obj\Debug\net8.0\ProjectMVC.pdb
 C:\Users\HP\Downloads\RapidBootcamp\RapidProject.git\ProjectMVC\obj\Debug\net8.0\ProjectMVC.genruntimeconfig.cache
 C:\Users\HP\Downloads\RapidBootcamp\RapidProject.git\ProjectMVC\obj\Debug\net8.0\ref\ProjectMVC.dll
+=======
+C:\Users\HP\source\repos\SoloProject.InventoryApi\ProjectMVC\obj\Debug\net8.0\ProjectMVC.sourcelink.json
+>>>>>>> 856ea5e7cd6cbe8bee8e8afd3bfb4253a40f44e4

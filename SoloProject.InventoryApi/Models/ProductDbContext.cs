@@ -27,6 +27,7 @@ public partial class ProductDbContext : DbContext
     {
         modelBuilder.Entity<Product>(entity =>
         {
+
             entity.Property(e => e.Code)
                 .HasMaxLength(10)
                 .IsUnicode(false);
@@ -34,18 +35,27 @@ public partial class ProductDbContext : DbContext
                 .HasMaxLength(50)
                 .IsUnicode(false);
             entity.Property(e => e.Price).HasColumnType("decimal(18, 0)");
+
+            entity.HasKey(e => e.Id).HasName("PK_Product");
+
         });
 
         modelBuilder.Entity<Transaction>(entity =>
         {
             entity.ToTable(tb => tb.HasTrigger("Tg_UpdateStockLevel"));
 
+
             entity.Property(e => e.Date)
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime");
 
             entity.HasOne(d => d.Product).WithMany(p => p.Transactions)
-                .HasForeignKey(d => d.ProductId)
+                .HasForeignKey(d => d.ProductId);
+
+            entity.Property(e => e.Date).HasDefaultValueSql("(getdate())");
+
+            entity.HasOne(d => d.Product).WithMany(p => p.Transactions)
+
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Transactions_Product");
         });

@@ -94,6 +94,7 @@ namespace SoloProject.InventoryApi.Services
 
         public async Task<Transaction> UpdateTransactionType(int id)
         {
+
             var transaction = await _db.Transactions.Include(x => x.Product).FirstOrDefaultAsync(x => x.TransactionId == id);
             if (transaction == null)
             {
@@ -107,6 +108,26 @@ namespace SoloProject.InventoryApi.Services
             return transaction;
         }
 
+
+            try
+            {
+                var transaction = await _db.Transactions.Include(x => x.Product).FirstOrDefaultAsync(x => x.TransactionId == id);
+                if (transaction == null)
+                {
+                    throw new ArgumentException($"Transaction with ID {id} not found.");
+                }
+
+                transaction.TransactionType = !transaction.TransactionType; // Toggle the transaction type
+
+                await _db.SaveChangesAsync();
+
+                return transaction;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
 
     }
 }

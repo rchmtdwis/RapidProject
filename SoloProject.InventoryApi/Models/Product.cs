@@ -16,5 +16,11 @@ public partial class Product
 
     public decimal Price { get; set; }
 
+
     public virtual ICollection<Transaction> Transactions { get; set; } = new List<Transaction>();
 }
+
+    [InverseProperty("Product")]
+    public virtual ICollection<Transaction> Transactions { get; set; } = new List<Transaction>();
+}
+
