@@ -1,25 +1,29 @@
 ﻿@using ProjectMVC.ViewModels
 @model ProductViewModel
 
+<!DOCTYPE html>
 <html>
 <head>
     <title>Edit Product</title>
 </head>
 <body>
     <h2>Edit Product</h2>
-    <form method="post" action="/Products/Edit">
-        <input type="hidden" value="@Model.Id" name="ProductId" />
+    <form asp-action="Edit" asp-controller="Product" method="post">
+        <input type="hidden" asp-for="Id" />
         <div>
-            <label for="Name">Product Name:</label>
-            <input type="text" value="@Model.Name" name="Name" />
-
-            <label for="StockLevel">Stock Level:</label>
-            <input type="text" value="@Model.Stock" name="StockLevel" />
-            <label for="Price">Price:</label>
-            <input type="text" value="@Model.Price" name="Price" />
+            <label asp-for="Name">Product Name:</label>
+            <input asp-for="Name" class="form-control" />
         </div>
         <div>
-            <input type="submit" value="Edit" />
+            <label asp-for="Stock">Stock Level:</label>
+            <input asp-for="Stock" class="form-control" />
+        </div>
+        <div>
+            <label asp-for="Price">Price:</label>
+            <input asp-for="Price" class="form-control" />
+        </div>
+        <div>
+            <input type="submit" value="Edit" class="btn btn-primary" />
         </div>
     </form>
 </body>
