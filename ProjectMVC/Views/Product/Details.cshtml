@@ -1,0 +1,30 @@
+﻿@using ProjectMVC.ViewModels
+@model ProductViewModel
+
+
+@{
+    ViewData["Title"] = "Product Detail";
+}
+<html>
+<head>
+    <title>Detail Vehicle</title>
+</head>
+<body>
+    <h1>@Model.Name</h1>
+    <p>Stock Level: @Model.Stock</p>
+    <p>Stock Level: @Model.Price</p>
+
+    <form asp-action="BuyProduct" method="post">
+        <input type="hidden" asp-for="Id" />
+        <input type="hidden" name="TransactionType" value="Add" />
+        <div>
+            <label asp-for="Quantity">Quantity:</label>
+            <input asp-for="Quantity" type="number" id="quantity" name="quantity" min="1" max="@Model.Stock" required />
+            <span asp-validation-for="Quantity"></span>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary" >Buy Product</button>
+        </div>
+    </form>
+</body>
+</html>

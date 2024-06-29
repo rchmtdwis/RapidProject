@@ -4616,11 +4616,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\HP\\source\\repos\\SoloProject.InventoryApi\\SoloProject.InventoryApi\\SoloProject.InventoryApi.csproj",
+      "projectUniqueName": "C:\\Users\\HP\\Downloads\\RapidBootcamp\\RapidProject.git\\SoloProject.InventoryApi\\SoloProject.InventoryApi.csproj",
       "projectName": "SoloProject.InventoryApi",
-      "projectPath": "C:\\Users\\HP\\source\\repos\\SoloProject.InventoryApi\\SoloProject.InventoryApi\\SoloProject.InventoryApi.csproj",
+      "projectPath": "C:\\Users\\HP\\Downloads\\RapidBootcamp\\RapidProject.git\\SoloProject.InventoryApi\\SoloProject.InventoryApi.csproj",
       "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\HP\\source\\repos\\SoloProject.InventoryApi\\SoloProject.InventoryApi\\obj\\",
+      "outputPath": "C:\\Users\\HP\\Downloads\\RapidBootcamp\\RapidProject.git\\SoloProject.InventoryApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\HP\\source\\repos\\SoloProject.InventoryApi\\ProjectMVC\\ProjectMVC.csproj": {}
+    "C:\\Users\\HP\\Downloads\\RapidBootcamp\\RapidProject.git\\ProjectMVC\\ProjectMVC.csproj": {}
   },
   "projects": {
-    "C:\\Users\\HP\\source\\repos\\SoloProject.InventoryApi\\ProjectMVC\\ProjectMVC.csproj": {
+    "C:\\Users\\HP\\Downloads\\RapidBootcamp\\RapidProject.git\\ProjectMVC\\ProjectMVC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\HP\\source\\repos\\SoloProject.InventoryApi\\ProjectMVC\\ProjectMVC.csproj",
+        "projectUniqueName": "C:\\Users\\HP\\Downloads\\RapidBootcamp\\RapidProject.git\\ProjectMVC\\ProjectMVC.csproj",
         "projectName": "ProjectMVC",
-        "projectPath": "C:\\Users\\HP\\source\\repos\\SoloProject.InventoryApi\\ProjectMVC\\ProjectMVC.csproj",
+        "projectPath": "C:\\Users\\HP\\Downloads\\RapidBootcamp\\RapidProject.git\\ProjectMVC\\ProjectMVC.csproj",
         "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\HP\\source\\repos\\SoloProject.InventoryApi\\ProjectMVC\\obj\\",
+        "outputPath": "C:\\Users\\HP\\Downloads\\RapidBootcamp\\RapidProject.git\\ProjectMVC\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",

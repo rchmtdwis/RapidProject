@@ -30,13 +30,13 @@ namespace SoloProject.InventoryApi.Controllers
                 ProductDTO productDTO = new ProductDTO
                 {
                     Id = product.Id,
-                    Code = product.Code,    
+                    Code = product.Code,
                     Name = product.Name,
                     Stock = product.Stock,
                     Price = product.Price,
                 };
                 productDTOs.Add(productDTO);
-                
+
             }
             return Ok(productDTOs);
         }
@@ -100,7 +100,7 @@ namespace SoloProject.InventoryApi.Controllers
             try
             {
                 var updatedData = await _productServices.GetById(id);
-               if(updatedData != null)
+                if (updatedData != null)
                 {
                     updatedData.Code = productDTO.Code;
                     updatedData.Name = productDTO.Name;
@@ -110,9 +110,9 @@ namespace SoloProject.InventoryApi.Controllers
                     var result = await _productServices.Update(updatedData);
                     return Ok(result);
                 }
-               return BadRequest($"Product dengan Id = {id} tidak ditemukan");
+                return BadRequest($"Product dengan Id = {id} tidak ditemukan");
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }

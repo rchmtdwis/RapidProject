@@ -1,0 +1,24 @@
+﻿@using ProjectMVC.ViewModels
+@model TransactionViewModel
+
+@{
+    ViewData["Title"] = "Transaction Detail";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Transaction Detail</title>
+</head>
+<body>
+    <h1>Transaction Detail</h1>
+    <p>Transaction ID: @Model.TransactionId</p>
+    <p>Quantity: @Model.Quantity</p>
+    <p>Transaction Type: @Model.TransactionType</p>
+    <p>Date: @Model.Date</p>
+
+    <form asp-action="UpdateTransactType" asp-route-id="@Model.TransactionId" method="post">
+        <button type="submit">Update Transaction Type</button>
+    </form> 
+</body>
+</html>

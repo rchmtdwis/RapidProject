@@ -14,6 +14,7 @@
             <th>Name</th>
             <th>Stock</th>
             <th>Price</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -25,6 +26,7 @@
                 <td>@product.Name</td>
                 <td>@product.Stock</td>
                 <td>@product.Price.ToString("C")</td>
+                <td><a href="/product/@product.Id">Buy Product</a></td>
             </tr>
         }
     </tbody>

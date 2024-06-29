@@ -35,9 +35,9 @@ namespace SoloProject.InventoryApi.Services
                 _db.Remove(product);
                 await _db.SaveChangesAsync();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-            throw new Exception(ex.Message); 
+                throw new Exception(ex.Message);
             }
         }
 
@@ -79,7 +79,7 @@ namespace SoloProject.InventoryApi.Services
 
                 return entity;
             }
-            catch(Exception ex) 
+            catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }

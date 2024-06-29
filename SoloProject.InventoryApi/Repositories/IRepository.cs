@@ -1,6 +1,6 @@
 ﻿namespace SoloProject.InventoryApi.Repositories
 {
-    public interface IRepository <T> where T : class
+    public interface IRepository<T> where T : class
     {
         Task<T> Add(T entity);
         Task<IEnumerable<T>> GetAll();

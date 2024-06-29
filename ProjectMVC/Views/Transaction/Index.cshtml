@@ -1,0 +1,37 @@
+﻿@using ProjectMVC.ViewModels
+@model IEnumerable<TransactionViewModel>
+
+
+@{
+    ViewData["Title"] = "Transaction List";
+}
+
+<h1>Product List</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Product Name</th>
+            <th>Quantity</th>
+            <th>TransactionType</th>
+            <th>Price</th>
+            <th>Date</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var transaction in Model)
+        {
+            <tr>
+                <td>@transaction.TransactionId</td>
+                <td>@transaction.Product.Name</td>
+                <td>@transaction.Quantity</td>
+                <td>@transaction.TransactionType</td>
+                <td>@transaction.Product.Price</td>
+                <td>@transaction.Date</td>
+                <td><a href="/transaction/@transaction.TransactionId">Details</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

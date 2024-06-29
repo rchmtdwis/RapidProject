@@ -35,11 +35,6 @@ namespace ProjectMVC.Controllers
             return View(products);
         }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
         
     }
 }

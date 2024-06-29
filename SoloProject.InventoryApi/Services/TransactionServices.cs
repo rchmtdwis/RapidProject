@@ -16,14 +16,27 @@ namespace SoloProject.InventoryApi.Services
         {
             try
             {
+                var product = await _db.Products.FirstOrDefaultAsync(x => x.Id == entity.ProductId);
+
+                if (product == null)
+                {
+                    throw new Exception("Product not found");
+                }
+
+                if (entity.TransactionType == false && product.Stock == 0)
+                {
+                    throw new Exception("Cannot create a sale transaction for a product with zero stock level");
+                }
+
                 await _db.Transactions.AddAsync(entity);
+
                 await _db.SaveChangesAsync();
-                await _db.SaveChangesAsync();
+
                 return entity;
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.Message);
+                throw new Exception(ex.InnerException.Message);
             }
         }
 
@@ -59,24 +72,41 @@ namespace SoloProject.InventoryApi.Services
         {
             try
             {
-                var transaction = await _db.Transactions.FirstOrDefaultAsync(x => x.TransactionId == id);
+                var transaction = await _db.Transactions.Include(x => x.Product).FirstOrDefaultAsync(x => x.TransactionId == id);
 
-                if(transaction == null)
+                if (transaction == null)
                 {
                     throw new Exception($"Transaksi dengan id {id} tidak ditemukan");
                 }
                 return transaction;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
 
         }
 
-        public Task<Transaction> Update(Transaction entity)
+        public async Task<Transaction> Update(Transaction entity)
         {
             throw new NotImplementedException();
         }
+
+        public async Task<Transaction> UpdateTransactionType(int id)
+        {
+            var transaction = await _db.Transactions.Include(x => x.Product).FirstOrDefaultAsync(x => x.TransactionId == id);
+            if (transaction == null)
+            {
+                throw new ArgumentException($"Transaction with ID {id} not found.");
+            }
+
+            transaction.TransactionType = !transaction.TransactionType; // Toggle the transaction type
+
+            await _db.SaveChangesAsync();
+
+            return transaction;
+        }
+
+
     }
 }
